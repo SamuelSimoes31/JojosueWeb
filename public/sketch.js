@@ -8,6 +8,8 @@ function setup() {
   socket.on('positions', positions => {
     background(120,143,160);
     for (const [id, position] of Object.entries(positions)){
+      if(id !== myID) fill(0,0,255);
+      else fill(255,0,0);
       rect(position.x,position.y,50,50);
     }
   })
