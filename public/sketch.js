@@ -1,14 +1,17 @@
+const position = {x: 50, y: 50};
 
 function setup() {
   createCanvas(500, 500);
-  fullscreen();
 }
 
 function draw() {
-  if (mouseIsPressed) {
-    fill(0);
-  } else {
-    fill(255);
-  }
-  ellipse(mouseX, mouseY, 80, 80);
+  background(120,143,160);
+  rect(position.x,position.y,50,50);
+}
+
+function keyPressed() {
+  if(key === 'w') position.y -= 50;
+  else if(key === 's') position.y += 50;
+  else if(key === 'a') position.x -= 50;
+  else if(key === 'd') position.x += 50;
 }
