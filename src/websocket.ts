@@ -7,6 +7,7 @@ io.on('connection', socket => {
   console.log(`-> ${id} connected!`);
 
   positions[id] = {x:0,y:0};
+  io.emit('positions',positions);
 
   socket.on('keyboard',key => {
     console.log(`Key [${key}] from ${id}`);
