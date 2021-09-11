@@ -5,12 +5,12 @@ function setup() {
   background(120,143,160);
   rect(0,0,50,50);
 
-  socket.on('positions', positions => {
+  socket.on('players', players => {
     background(120,143,160);
-    for (const [id, position] of Object.entries(positions)){
-      if(id === myID) fill(0,0,255);
-      else fill(255,0,0);
-      rect(position.x,position.y,50,50);
+    for (const [id, player] of Object.entries(players)){
+      console.log(player)
+      fill(...player.color);
+      rect(player.x,player.y,50,50);
     }
   })
 }
