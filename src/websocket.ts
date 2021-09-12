@@ -14,10 +14,10 @@ io.on('connection', socket => {
   socket.on('keyboard',key => {
     console.log(`Key [${key}] from ${id}`);
     const {x,y} = players[id];
-    if(key === 'w') players[id] = {...players[id], y: y-50};
-    else if(key === 's') players[id] = {...players[id],y: y+50};
-    else if(key === 'a') players[id] = {...players[id],x: x-50};
-    else if(key === 'd') players[id] = {...players[id],x: x+50};
+    if(key === 'w') players[id] = {...players[id], y: y-32};
+    else if(key === 's') players[id] = {...players[id],y: y+32};
+    else if(key === 'a') players[id] = {...players[id],x: x-32};
+    else if(key === 'd') players[id] = {...players[id],x: x+32};
 
     io.emit('players',players);
   })
